@@ -1,6 +1,6 @@
-命令
+Order:
 python trainer_heanet_mtl_HEA.py --task etot emix eform --hidden_channels 128 --n_filters 64 --n_interactions 3 --is_validate --tower_h1 128 --tower_h2 64 --batch_size 128 --epochs 500 --split_type 0 -t
-训练得到IB的模型
+Training to get a model of IB
 the score of task 0 is 0.07146676629781723
 
 the score of task 1 is 0.028152920305728912
@@ -8,14 +8,14 @@ the score of task 1 is 0.028152920305728912
 the score of task 2 is 0.03343312442302704
 
 
-命令：
+Order：
 python getib.py --task etot emix eform --hidden_channels 128 --n_filters 64 --n_interactions 3 --is_validate --tower_h1 128 --tower_h2 64 --batch_size 1 --epochs 500 --processed_data --split_type 0 -p
-输出IB保存文件，注意调用模型
+Output IB save file, note call model
 
-命令
+Order:
 python trainer_agunet.py --task etot emix eform --hidden_channels 128 --n_filters 64 --n_interactions 3 --is_validate --tower_h1 128 --tower_h2 64 --batch_size 128 --epochs 800 --split_type 0 -t
-训练增强模型
+Train the augmented model
 
-命令
+Order:
 python trainer_heanet_mtl_HEA.py --task eform --hidden_channels 128 --n_filters 64 --n_interactions 3 --tower_h1 128 --tower_h2 64 --batch_size 128 --epochs 500 --split_type 1 -p
-预测
+predict
