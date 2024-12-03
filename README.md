@@ -9,17 +9,29 @@ and magnetic moments in quinary systems.
 
 **Contents of documents：**
 The folder HAE_Data contains all the data for the model.
+
 The folder datasets contains the data loading datasets for the training of each model.
+
 The folder models contains the network structure of each model.
+
 MLP_transfer.py is for training the transfer augmentation model and predicted result.
+
 get_ib.py is used to extract interaction blocks from the trained ECNe.
+
 get_describer.py is used to downscale the interaction block.
+
 model.py defines the generic class for the project's model.
+
 model_test.py is the test file for model development.
+
 trainer_agunet.py is used to train the augmentation model.
+
 trainer_gan.py is used to train training InfoGAN models.
+
 trainer_heanet.py is used to train ECNet with single task.
+
 trainer_heanet_mtl_HEA.py is used to train ECNet with mult-task
+
 
 **Environment Requirements:**
 The basic environment is the PyTorch, and CUDA for your GPU machines. The projects use the graph to model pairwise relations between nodes, 
