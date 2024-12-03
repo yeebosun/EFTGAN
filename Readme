@@ -1,3 +1,26 @@
+EFTGAN:
+we develop a generative network framework: Elemental Features enhanced and Transferring corrected data augmentation
+in Generative Adversarial Networks (EFTGAN). Combining the elemental convolution technique with Generative Adversarial Networks (GAN),
+EFTGAN provides a robust and efficient approach for generating data containing elemental and structural information that can be used not only
+for data augmentation to improve model accuracy, but also for prediction when the structures are unknown. 
+Applying this framework to the FeNiCoCrMn/Pd high-entropy alloys, we successfully improve the prediction accuracy
+in a small data set and predict the concentrationdependent formation energies, lattices,
+and magnetic moments in quinary systems. 
+
+Contents of documents：
+The folder HAE_Data contains all the data for the model.
+The folder datasets contains the data loading datasets for the training of each model.
+The folder models contains the network structure of each model.
+MLP_transfer.py is for training the transfer augmentation model and predicted result.
+get_ib.py is used to extract interaction blocks from the trained ECNe.
+get_describer.py is used to downscale the interaction block.
+model.py defines the generic class for the project's model.
+model_test.py is the test file for model development.
+trainer_agunet.py is used to train the augmentation model.
+trainer_gan.py is used to train training InfoGAN models.
+trainer_heanet.py is used to train ECNet with single task.
+trainer_heanet_mtl_HEA.py is used to train ECNet with mult-task
+
 Order:
 python trainer_heanet_mtl_HEA.py --task etot emix eform --hidden_channels 128 --n_filters 64 --n_interactions 3 --is_validate --tower_h1 128 --tower_h2 64 --batch_size 128 --epochs 500 --split_type 0 -t
 Training to get a model of IB
