@@ -21,6 +21,15 @@ trainer_gan.py is used to train training InfoGAN models.
 trainer_heanet.py is used to train ECNet with single task.
 trainer_heanet_mtl_HEA.py is used to train ECNet with mult-task
 
+Environment Requirements:
+The basic environment is the PyTorch, and CUDA for your GPU machines. The projects use the graph to model pairwise relations between nodes, 
+and the graph representation is then combined with the message passing networks. Thus, the framework is also based on the torch_geometric, 
+where its installation could be refered to the official website [https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html]
+(https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html). 
+For other packages, you can easily install them via :
+pip install -r package.txt 
+
+
 Order:
 python trainer_heanet_mtl_HEA.py --task etot emix eform --hidden_channels 128 --n_filters 64 --n_interactions 3 --is_validate --tower_h1 128 --tower_h2 64 --batch_size 128 --epochs 500 --split_type 0 -t
 Training to get a model of IB
