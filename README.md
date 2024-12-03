@@ -66,6 +66,7 @@ Meaning of the parameters in the command：
   b0: Conducted in 45 multi-homogenised alloys, dividing training and testing according to the ratio. b1: Conducted in 23 low-homogenised alloys. b2: Conducted in 2+3+4+5-homogenised alloys.
 
 Reference values for the accuracy of models trained using the above commands:
+
 the score of task 0 is 0.07146676629781723
 
 the score of task 1 is 0.028152920305728912
@@ -74,6 +75,7 @@ the score of task 2 is 0.03343312442302704
 
 Afterwards the trained model is called and the interaction blocks are obtained from it. 
 Please enter the command:
+
 python getib.py --task etot emix eform --hidden_channels 128 --n_filters 64 --n_interactions 3 --is_validate --tower_h1 128 --tower_h2 64 --batch_size 1 --epochs 500 --processed_data --split_type 0 -p
 
 Use get_describer.py to to downscale the interaction block. This file can be run directly
@@ -83,6 +85,7 @@ And use the trained InfoGAN to generate the data.
 
 Use trainer_agunet.py to train the directly augmented model.
 Please enter the command:
+
 python trainer_agunet.py --task etot emix eform --hidden_channels 128 --n_filters 64 --n_interactions 3 --is_validate --tower_h1 128 --tower_h2 64 --batch_size 128 --epochs 800 --split_type 0 -t
 
 Use MLP_transfer.py to train the transfer augmentation model. This file can be run directly.
